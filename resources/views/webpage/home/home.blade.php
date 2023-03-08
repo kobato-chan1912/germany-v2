@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="de">
 @php
     $title = \App\Models\Config::where("config_name", "home_title")->first()->config_value;
     $description = \App\Models\Config::where("config_name", "home_description")->first()->config_value;

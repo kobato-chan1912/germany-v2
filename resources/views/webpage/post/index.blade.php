@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="de">
 
 @include("webpage.layouts.head",
 [
