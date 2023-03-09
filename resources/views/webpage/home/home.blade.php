@@ -281,7 +281,7 @@
 
 
                     @foreach ($categories as $category)
-                        <li class="list-group-item">
+                        <li class="cat-li col-md-3 col-xs-6 col-sm-4">
                             <a href="/{{ $category->category_slug }}">{{ $category->category_name }}</a>
                         </li>
                     @endforeach

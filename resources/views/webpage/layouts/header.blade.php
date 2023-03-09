@@ -21,7 +21,7 @@
                     <li id="menu-item-4479"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4479 @if(URL::current()== route("newest")) active @endif"><a
                             title="&Uacute;ltimos" href="{{route("newest")}}"><span
-                                class="glyphicon &Uacute;ltimos tonos de llamada"></span>&nbsp; Neueste Klingeltöne  </a>
+                                class="glyphicon &Uacute;ltimos tonos de llamada"></span>&nbsp; Neue Klingeltöne  </a>
                     </li>
 
 
@@ -29,6 +29,11 @@
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4479 @if(URL::current() == env("WEBPAGE_URL"). "/whatsapp")) active @endif"><a
                             title="&Uacute;ltimos" href="{{route("lostMejores")}}"><span
                                 class="glyphicon &Uacute;ltimos tonos de llamada"></span>&nbsp; Beste Klingeltöne   </a>
+                    </li>
+                    <li id="menu-item-4484"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4479 @if(URL::current() == env("WEBPAGE_URL"). "/whatsapp")) active @endif"><a
+                            title="&Uacute;ltimos" href="{{route("popularSongs")}}"><span
+                                class="glyphicon &Uacute;ltimos tonos de llamada"></span>&nbsp; Top Klingeltöne   </a>
                     </li>
                     <li id="menu-item-4484"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4479 @if(URL::current() == env("WEBPAGE_URL"). "/whatsapp")) active @endif"><a
