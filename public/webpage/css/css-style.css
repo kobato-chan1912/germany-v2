@@ -6,6 +6,9 @@ body {
     line-height: normal;
     background: #ffffff;
 }
+.socials {
+    padding-right: 44px;
+}
 
 .socials li {
     display: inline-block;
