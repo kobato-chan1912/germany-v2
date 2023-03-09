@@ -31,21 +31,6 @@
         </li>
     </ul>
 </div>
-<div class="box">
-    &nbsp; &nbsp;
-    <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Kategorien
-    </h2>
-
-    <ul class="list_apps">
-
-        @php $categories = \App\Models\Category::where("display", 1)->get(); @endphp
-        @foreach ($categories as $category)
-            <li class="list-group-item">
-                <a href="/{{ $category->category_slug }}">{{ $category->category_name }}</a>
-            </li>
-        @endforeach
-    </ul>
-</div>
 
 <br>
 <div style="clear:both;"></div>

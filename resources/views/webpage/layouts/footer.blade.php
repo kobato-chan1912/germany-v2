@@ -70,6 +70,36 @@
     <div class="container cat">
         <div class="category-list-footer">
             <div class="footer-header">
+                <h2 class="footer-title"><i class="fa fa-music" aria-hidden="true"></i> Kategorien </h2>
+            </div>
+            <ul class="cat-list">
+                @php $posts = \App\Models\Category::all(); @endphp
+                @foreach($posts as $post)
+                    <li class="cat-li col-md-3 col-xs-6 col-sm-4"><a href="/{{$post->category_slug}}"
+                                                                     title="alarma ringtone collection"><i class="fa fa-life-buoy" aria-hidden="true"></i>
+                            {{$post->category_name}}
+                        </a> </li>
+                @endforeach
+                {{--                @php $categories = \App\Models\Category::where("display",1)->get(); @endphp--}}
+                {{--                @foreach($categories as $category)--}}
+                {{--                    <li class="cat-li col-md-3 col-xs-6 col-sm-4 app_item">--}}
+                {{--                        <a href="tonos-de-llamada-alarma.html" title="alarma ringtone collection">--}}
+                {{--                            <div class="app_thumb">--}}
+                {{--                                <img width="20%" src="/wp-content/uploads/2020/07/logo.png" alt="">--}}
+                {{--                                <a href="soy-el-unico.html" class="app_name" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>--}}
+                {{--                            </div>--}}
+
+
+
+                {{--                        </a>--}}
+                {{--                    </li>--}}
+                {{--                @endforeach--}}
+            </ul>
+        </div>
+    </div>
+    <div class="container cat">
+        <div class="category-list-footer">
+            <div class="footer-header">
                 <h2 class="footer-title"><i class="fa fa-book" aria-hidden="true"></i> Blog </h2>
             </div>
             <ul class="cat-list">

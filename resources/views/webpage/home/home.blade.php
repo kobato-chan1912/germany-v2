@@ -271,23 +271,6 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-5">
-            <div class="box">
-                &nbsp; &nbsp;
-                <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Kategorien
-                </h2>
-
-                <ul class="list_apps">
-
-
-                    @foreach ($categories as $category)
-                        <li class="cat-li col-md-3 col-xs-6 col-sm-4">
-                            <a href="/{{ $category->category_slug }}">{{ $category->category_name }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
 
 
 
