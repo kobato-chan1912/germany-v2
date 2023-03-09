@@ -59,7 +59,7 @@
             // 	});
             // });
         </script>
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="box column-3">
                 <a href="{{route("newest")}}">
                     <h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Neueste Klingeltöne  </h1>
@@ -214,7 +214,7 @@
 
         </div>
 
-        <div class="col-md-5">
+        <div class="col-md-4">
             <div class="box">
                 &nbsp; &nbsp;<a href="{{route("popularSongs")}}" title="Tonos de llamada populares">
                     <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i>  Top Klingeltöne </h2>
