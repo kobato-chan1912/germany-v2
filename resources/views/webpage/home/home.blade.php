@@ -62,7 +62,7 @@
         <div class="col-md-8">
             <div class="box column-3">
                 <a href="{{route("newest")}}">
-                    <h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Neueste Klingeltöne  </h1>
+                    <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Neueste Klingeltöne  </h2>
                 </a>
 
 
@@ -152,7 +152,7 @@
             </div>
             <div class="box column-3">
                 <a href="{{route("lostMejores")}}">
-                    <h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Beste Klingeltöne  </h1>
+                    <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Beste Klingeltöne  </h2>
                 </a>
 
                 <ul class="list_apps">
@@ -285,8 +285,10 @@
                 <br>
                 <div id="container-cfq">
                     <div class="page-description summary">
+                        <div class="center-title" style="text-align: center">
                         <h1 class="gt-title page-title">Laden Sie Klingelton {{\Carbon\Carbon::now()->year}} mp3 kostenlos für Handys herunter.
                         </h1>
+                        </div>
                         <div class="entry-content">
                             @php echo $post @endphp
                         </div>
