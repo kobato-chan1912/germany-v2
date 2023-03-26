@@ -15,9 +15,12 @@
 <body>
 @include('webpage.layouts.header')
 <section class="body">
-    <div class="banner">
-        <div class="container">
+    <div class="banner" style="height: 200px;">
+        <div class="container" >
+            <h1 class="gt-title page-title" style="text-align: center;">Laden Sie Klingelton {{\Carbon\Carbon::now()->year}} mp3 kostenlos für Handys herunter. </h1>
+
             @include('layouts.search_box')
+
             <br>
             <div style="clear:both;"></div>
             {{-- <span --}}
@@ -59,7 +62,8 @@
             // 	});
             // });
         </script>
-        <div class="col-md-8">
+
+            <div class="col-md-8">
             <div class="box column-3">
                 <a href="{{route("newest")}}">
                     <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Neueste Klingeltöne  </h2>
@@ -286,7 +290,6 @@
                 <div id="container-cfq">
                     <div class="page-description summary">
                         <div class="center-title" style="text-align: center">
-                        <h1 class="gt-title page-title">Laden Sie Klingelton {{\Carbon\Carbon::now()->year}} mp3 kostenlos für Handys herunter.
                         </h1>
                         </div>
                         <div class="entry-content">
