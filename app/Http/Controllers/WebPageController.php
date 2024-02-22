@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Song;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class WebPageController extends Controller
@@ -22,21 +23,26 @@ class WebPageController extends Controller
         $post = file_get_contents(storage_path("app/public/post_outside.txt"));
         $page = $this->page;
         $url = "/page/";
-        $newestSongs = Song::orderBy("id", "desc")->where("display",1)->paginate(14);
+        $newestSongs = Song::orderBy("id", "desc")->where("display",1)->paginate(10);
         $bestSongs = Song::orderBy("downloads", "desc")->where("display",1)->limit(10)->get();
         $popularSongs = Song::orderBy("listeners", "desc")->where("display",1)->limit(10)->get();
         $categories = Category::where("display",1)->get();
+        $topWeekSongs = Song::orderBy("listeners", "desc")->where("display",1)
+            ->where('created_at', '>=', Carbon::today()->startOfWeek())->limit(6)->get();
+
+        $topMonthSongs = Song::orderBy("listeners", "desc")->where("display",1)
+            ->where('created_at', '>=', Carbon::today()->startOfMonth())->limit(6)->get();
         return view ("webpage.home.home",
-            compact('post', 'newestSongs', 'categories', 'bestSongs', 'popularSongs', 'page', 'url'));
+            compact('post', 'newestSongs', 'categories', 'bestSongs', 'popularSongs', 'page', 'url', 'topWeekSongs', 'topMonthSongs'));
     }
 
-    public function download(Request $request, $id)
+    public function download(Request $request, $category, $song)
     {
-
-        $song = Song::where("id", $id)->first();
+        $category = Category::where("category_slug", $category)->where("display",1)->firstOrFail();
+        $song = Song::where("slug", $song)->where("display",1)->where("category_id", $category->id)->firstOrFail();
         if ($song != null){
             $currentDownload = $song->downloads;
-            Song::where("id", $id)->update(["downloads" => $currentDownload+1]);
+            $song->update(["downloads" => $currentDownload+1]);
 
             $similarSongs = Song::where("category_id", $song->category_id)
                 ->where("display", 1)

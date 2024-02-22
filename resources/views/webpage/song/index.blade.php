@@ -48,7 +48,7 @@
             // });
         </script>
         <div class="rowx" style="margin-top: 25px;">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="box">
 
                     <div class="title single-breadcrumb">
@@ -227,10 +227,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th>Größen</th>
-                                            <td>{{$song->size}}</td>
-                                        </tr>
+
 
 
                                         </tbody>
@@ -238,7 +235,7 @@
                                 </div>
 
 
-                                <a id="btnModalx" href="/download/{{$song->id}}" class="btn_download" rel="nofollow"
+                                <a id="btnModalx" href="/{{$song->category->category_slug}}/{{$song->slug}}/download/" class="btn_download" rel="nofollow"
                                    title="Download">Herunterladen<i class="fa fa-download"></i></a>
 
                             </div>
@@ -327,12 +324,12 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="/{{$song->slug}}" class="app_name" title="">{{$song->title}}</a>
+                                <a href="/{{$song->category->category_slug . "/" . $song->slug}}" class="app_name" title="">{{$song->title}}</a>
                                 <div class="starsx">
                                     <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>
                                     <span><i class="fa fa-download" aria-hidden="true"></i> {{$song->downloads}}</span>
                                     <span><i class="fa fa-file-audio-o" aria-hidden="true"></i> {{$song->size}}</span>
-                                    <a href="/{{$song->slug}}" class="btn_download" rel="nofollow" title=""></a>
+                                    <a href="/{{$song->category->category_slug . "/" . $song->slug}}" class="btn_download" rel="nofollow" title=""></a>
                                 </div>
                                 {{--                                <div class="developer"><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</div>--}}
                             </li>
@@ -347,11 +344,7 @@
                     <br>
                 </div>
             </div>
-            <div class="col-md-4">
-                @include("webpage.layouts.right_1")
 
-
-            </div>
         </div>
     </div>
 

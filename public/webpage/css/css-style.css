@@ -271,8 +271,8 @@ body {
 }
 
 .column-3 .list_apps .app_item {
-    width: 32.3%;
-    margin-right: 0.5%;
+    width: 49%;
+    margin-right: 0.7%;
 }
 .column-3.order-to-bottom .list_apps .app_item {
     width: 102% !important;

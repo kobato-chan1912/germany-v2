@@ -118,10 +118,14 @@
         .page-description .button button:hover {
             background: #ee493f;
         }
+
+
+
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="revisit-after" content="1 days">
+    <link rel="canonical" href="{{Request::fullUrl()}}" />
 
     @php
         $content = file_get_contents(storage_path("app/public/head.txt"));

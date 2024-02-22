@@ -56,7 +56,8 @@
             // 		};
             // 	});
             // });
-        </script><div class="col-md-8 col-sm-8 col-xs-12 pull-left">
+        </script>
+        <div class="col-md-8 col-sm-8 col-xs-12 pull-left">
             <div class="box column-3">
                 &nbsp; &nbsp;<h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> {{$title}} </h2>
 
@@ -94,7 +95,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="/{{$song->slug}}" class="app_name" title="">{{$song->title}}</a>
+                            <a href="/{{$song->category->category_slug . "/" . $song->slug}}" class="app_name" title="">{{$song->title}}</a>
                             <div class="starsx">
                                 <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>
                                 <span><i class="fa fa-download" aria-hidden="true"></i> {{$song->downloads}}</span>
@@ -136,12 +137,28 @@
                     <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>
                     <a class="page smaller current" href="{{$url}}{{$page}}">{{$page}}</a>
                     @endif
-            </div></div>
+
+                @if($custom !== null)
+                    @if($custom->content !== null)
+                        <div class="post_container" style="background-color: white; padding: 20px">
+                            {!! $custom->content !!}
+                        </div>
+                    @endif
+                @endif
+
+            </div>
+
+        </div>
+
+
         <div class="col-md-4 col-sm-4 col-xs-12" style="padding-top: 20px;">
             @include("webpage.layouts.right_1")
 
 
         </div>
+
+
+
 
 
     </div>

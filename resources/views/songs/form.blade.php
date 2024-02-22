@@ -198,7 +198,7 @@
 
         $.ajax({
             type:'POST',
-            url:"/admin/api/check-song",
+            url:"/CDM/api/check-song",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
