@@ -249,6 +249,12 @@ Route::get("/category-sitemap.xml", "SitemapController@categorySitemap");
 
 Route::prefix("/")->group(function (){
    Route::get("/", "WebPageController@indexHome")->name("webPageIndex");
+
+    // Search Routes
+
+    Route::get("/search/{search}", "WebPageCategoryController@search");
+
+
 //   Route::get("/newest", "WebPageController@newest");
     Route::get("/page/{page}", function($page){
         return redirect(env("WEBPAGE_URL"). "?page=". $page);
@@ -256,17 +262,14 @@ Route::prefix("/")->group(function (){
     Route::get("/beste-klingeltone", "WebPageCategoryController@losMejores")->name("lostMejores");
    Route::get("/neueste-klingeltone", "WebPageCategoryController@newestSongs")->name("newest");
    Route::get("/top-klingeltone", "WebPageCategoryController@popularSongs")->name("popularSongs");
-    Route::get("/{category}/{song}", "WebPageCategoryController@showSongs");
-    Route::get("/{slug}", "WebPageCategoryController@categorySongs")->name("categoriesSongs");
+   Route::get("/{slug}", "WebPageCategoryController@categorySongs")->name("categoriesSongs");
 
 
-   // Search Routes
-
-    Route::get("/search/{search}", "WebPageCategoryController@search");
 
     // Download
 
-    Route::get("/{category}/{song}/download", "WebPageController@download");
+//    Route::get("/{category}/{song}/download", "WebPageController@download");
+    Route::get("/download/{id}", "WebPageController@download");
     Route::get("/dl/download", "WebPageController@dlDownload")->name("dlDownload");
 
 });

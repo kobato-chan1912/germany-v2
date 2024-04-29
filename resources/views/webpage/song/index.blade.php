@@ -222,8 +222,8 @@
                                             <td>
                                                 <div class="qrcode">
                                                     <img class=""
-                                                         src="https://chart.googleapis.com/chart?chs=130x130&amp;cht=qr&amp;chl={{env("WEBPAGE_URL").$song->url}}"
-                                                         alt="Código QR">
+                                                         src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{env("WEBPAGE_URL").$song->url}}"
+                                                         alt="QR">
                                                 </div>
                                             </td>
                                         </tr>
@@ -235,7 +235,7 @@
                                 </div>
 
 
-                                <a id="btnModalx" href="/{{$song->category->category_slug}}/{{$song->slug}}/download/" class="btn_download" rel="nofollow"
+                                <a id="btnModalx" href="/{{$song->slug}}/download/" class="btn_download" rel="nofollow"
                                    title="Download">Herunterladen<i class="fa fa-download"></i></a>
 
                             </div>
@@ -324,12 +324,12 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="/{{$song->category->category_slug . "/" . $song->slug}}" class="app_name" title="">{{$song->title}}</a>
+                                <a href="/{{$song->slug}}" class="app_name" title="">{{$song->title}}</a>
                                 <div class="starsx">
                                     <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>
                                     <span><i class="fa fa-download" aria-hidden="true"></i> {{$song->downloads}}</span>
                                     <span><i class="fa fa-file-audio-o" aria-hidden="true"></i> {{$song->size}}</span>
-                                    <a href="/{{$song->category->category_slug . "/" . $song->slug}}" class="btn_download" rel="nofollow" title=""></a>
+                                    <a href="/{{$song->slug}}" class="btn_download" rel="nofollow" title=""></a>
                                 </div>
                                 {{--                                <div class="developer"><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</div>--}}
                             </li>

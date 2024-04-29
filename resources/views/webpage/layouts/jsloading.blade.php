@@ -1,7 +1,7 @@
 <script>
 
     function searching(val){
-        let url = "{{env("WEBPAGE_URL")}}" +  "/search/" + val;
+        let url = "/search/" + val;
         window.location.href = url;
     }
 

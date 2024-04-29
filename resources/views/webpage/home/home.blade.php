@@ -63,167 +63,167 @@
             // 	});
             // });
         </script>
-        <div class="col-md-12">
-            <div class="box column-3">
-                &nbsp; &nbsp;<ul class="nav nav-pills" style="background-color: #c27cf7">
-                    <li class="active"><a data-toggle="pill" href="#In-einer-Woche">In einer Woche  </a></li>
-                    <li><a data-toggle="pill" href="#In-einem-Monat">In einem Monat   </a></li>
+{{--        <div class="col-md-12">--}}
+{{--            <div class="box column-3">--}}
+{{--                &nbsp; &nbsp;<ul class="nav nav-pills" style="background-color: #c27cf7">--}}
+{{--                    <li class="active"><a data-toggle="pill" href="#In-einer-Woche">In einer Woche  </a></li>--}}
+{{--                    <li><a data-toggle="pill" href="#In-einem-Monat">In einem Monat   </a></li>--}}
 
-                </ul>
-                <div class="tab-content">
-                    <div id="In-einer-Woche" class="tab-pane fade in active">
-                        <ul class="list_apps">
+{{--                </ul>--}}
+{{--                <div class="tab-content">--}}
+{{--                    <div id="In-einer-Woche" class="tab-pane fade in active">--}}
+{{--                        <ul class="list_apps">--}}
 
-                            @foreach($topWeekSongs as $song)
+{{--                            @foreach($topWeekSongs as $song)--}}
 
-                                <li class="app_item">
-                                    <script type="text/javascript" defer>
-                                        var jQInit = jQInit || [];
-                                        jQInit.push(['myModule{{$song->id}}', function ($) {
-                                            jQuery(window).on('load', function ($) {
-                                                iniPlayer('{{$song->id}}', "{{$song->url}}");
-                                            });
-                                        }]);
-                                    </script>
-                                    <div class="app_thumb">
-                                        <div id="jquery_jplayer_{{$song->id}}" class="cp-jplayer"></div>
-                                        <div id="cp_container_{{$song->id}}" class="cp-container">
-                                            <div class="cp-buffer-holder">
-                                                <!-- .cp-gt50 only needed when buffer is > than 50% -->
-                                                <div class="cp-buffer-1"></div>
-                                                <div class="cp-buffer-2"></div>
-                                            </div>
-                                            <div class="cp-progress-holder">
-                                                <!-- .cp-gt50 only needed when progress is > than 50% -->
-                                                <div class="cp-progress-1"></div>
-                                                <div class="cp-progress-2"></div>
-                                            </div>
-                                            <div class="cp-circle-control"></div>
-                                            <ul class="cp-controls">
-                                                <li><a href="#" class="cp-play cp-play-{{$song->id}}"
-                                                       tabindex="1">play</a></li>
-                                                <li><a href="#" class="cp-pause cp-pause-{{$song->id}}"
-                                                       style="display:none;"
-                                                       tabindex="1">pause</a></li>
-                                                <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <a href="/{{$song->category->category_slug}}/{{$song->slug}}" class="app_name"
-                                       title="">{{$song->title}}</a>
-                                    <div class="starsx">
-                                        <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>
-                                        <span><i class="fa fa-download"
-                                                 aria-hidden="true"></i> {{$song->downloads}}</span>
-                                        <span><i class="fa fa-file-audio-o"
-                                                 aria-hidden="true"></i> {{$song->size}}</span>
+{{--                                <li class="app_item">--}}
+{{--                                    <script type="text/javascript" defer>--}}
+{{--                                        var jQInit = jQInit || [];--}}
+{{--                                        jQInit.push(['myModule{{$song->id}}', function ($) {--}}
+{{--                                            jQuery(window).on('load', function ($) {--}}
+{{--                                                iniPlayer('{{$song->id}}', "{{$song->url}}");--}}
+{{--                                            });--}}
+{{--                                        }]);--}}
+{{--                                    </script>--}}
+{{--                                    <div class="app_thumb">--}}
+{{--                                        <div id="jquery_jplayer_{{$song->id}}" class="cp-jplayer"></div>--}}
+{{--                                        <div id="cp_container_{{$song->id}}" class="cp-container">--}}
+{{--                                            <div class="cp-buffer-holder">--}}
+{{--                                                <!-- .cp-gt50 only needed when buffer is > than 50% -->--}}
+{{--                                                <div class="cp-buffer-1"></div>--}}
+{{--                                                <div class="cp-buffer-2"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="cp-progress-holder">--}}
+{{--                                                <!-- .cp-gt50 only needed when progress is > than 50% -->--}}
+{{--                                                <div class="cp-progress-1"></div>--}}
+{{--                                                <div class="cp-progress-2"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="cp-circle-control"></div>--}}
+{{--                                            <ul class="cp-controls">--}}
+{{--                                                <li><a href="#" class="cp-play cp-play-{{$song->id}}"--}}
+{{--                                                       tabindex="1">play</a></li>--}}
+{{--                                                <li><a href="#" class="cp-pause cp-pause-{{$song->id}}"--}}
+{{--                                                       style="display:none;"--}}
+{{--                                                       tabindex="1">pause</a></li>--}}
+{{--                                                <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <a href="/{{$song->category->category_slug}}/{{$song->slug}}" class="app_name"--}}
+{{--                                       title="">{{$song->title}}</a>--}}
+{{--                                    <div class="starsx">--}}
+{{--                                        <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>--}}
+{{--                                        <span><i class="fa fa-download"--}}
+{{--                                                 aria-hidden="true"></i> {{$song->downloads}}</span>--}}
+{{--                                        <span><i class="fa fa-file-audio-o"--}}
+{{--                                                 aria-hidden="true"></i> {{$song->size}}</span>--}}
 
-                                        <a href="/{{$song->category->category_slug}}/{{$song->slug}}"
-                                           class="btn_download" rel="nofollow" title=""></a>
-                                    </div>
-                                    {{--                                    <div class="developer"><i class="fa fa-eye"--}}
-                                    {{--                                                              aria-hidden="true"></i> {{$song->listeners}}</div>--}}
-                                </li>
+{{--                                        <a href="/{{$song->category->category_slug}}/{{$song->slug}}"--}}
+{{--                                           class="btn_download" rel="nofollow" title=""></a>--}}
+{{--                                    </div>--}}
+{{--                                    --}}{{--                                    <div class="developer"><i class="fa fa-eye"--}}
+{{--                                    --}}{{--                                                              aria-hidden="true"></i> {{$song->listeners}}</div>--}}
+{{--                                </li>--}}
 
-                            @endforeach
+{{--                            @endforeach--}}
 
-                        </ul>
-                    </div>
-                    <div id="In-einem-Monat" class="tab-pane fade">
-                        <ul class="list_apps">
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                    <div id="In-einem-Monat" class="tab-pane fade">--}}
+{{--                        <ul class="list_apps">--}}
 
-                            @foreach($topMonthSongs as $song)
+{{--                            @foreach($topMonthSongs as $song)--}}
 
-                                <li class="app_item">
-                                    <script type="text/javascript" defer>
-                                        var jQInit = jQInit || [];
-                                        jQInit.push(['myModule{{$song->id}}', function ($) {
-                                            jQuery(window).on('load', function ($) {
-                                                iniPlayer('{{$song->id}}', "{{$song->url}}");
-                                            });
-                                        }]);
-                                    </script>
-                                    <div class="app_thumb">
-                                        <div id="jquery_jplayer_{{$song->id}}" class="cp-jplayer"></div>
-                                        <div id="cp_container_{{$song->id}}" class="cp-container">
-                                            <div class="cp-buffer-holder">
-                                                <!-- .cp-gt50 only needed when buffer is > than 50% -->
-                                                <div class="cp-buffer-1"></div>
-                                                <div class="cp-buffer-2"></div>
-                                            </div>
-                                            <div class="cp-progress-holder">
-                                                <!-- .cp-gt50 only needed when progress is > than 50% -->
-                                                <div class="cp-progress-1"></div>
-                                                <div class="cp-progress-2"></div>
-                                            </div>
-                                            <div class="cp-circle-control"></div>
-                                            <ul class="cp-controls">
-                                                <li><a href="#" class="cp-play cp-play-{{$song->id}}"
-                                                       tabindex="1">play</a></li>
-                                                <li><a href="#" class="cp-pause cp-pause-{{$song->id}}"
-                                                       style="display:none;"
-                                                       tabindex="1">pause</a></li>
-                                                <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <a href="/{{$song->category->category_slug}}/{{$song->slug}}" class="app_name"
-                                       title="">{{$song->title}}</a>
-                                    <div class="starsx">
-                                        <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>
-                                        <span><i class="fa fa-download"
-                                                 aria-hidden="true"></i> {{$song->downloads}}</span>
-                                        <span><i class="fa fa-file-audio-o"
-                                                 aria-hidden="true"></i> {{$song->size}}</span>
-                                        <a href="/{{$song->category->category_slug}}/{{$song->slug}}"
-                                           class="btn_download" rel="nofollow" title=""></a>
+{{--                                <li class="app_item">--}}
+{{--                                    <script type="text/javascript" defer>--}}
+{{--                                        var jQInit = jQInit || [];--}}
+{{--                                        jQInit.push(['myModule{{$song->id}}', function ($) {--}}
+{{--                                            jQuery(window).on('load', function ($) {--}}
+{{--                                                iniPlayer('{{$song->id}}', "{{$song->url}}");--}}
+{{--                                            });--}}
+{{--                                        }]);--}}
+{{--                                    </script>--}}
+{{--                                    <div class="app_thumb">--}}
+{{--                                        <div id="jquery_jplayer_{{$song->id}}" class="cp-jplayer"></div>--}}
+{{--                                        <div id="cp_container_{{$song->id}}" class="cp-container">--}}
+{{--                                            <div class="cp-buffer-holder">--}}
+{{--                                                <!-- .cp-gt50 only needed when buffer is > than 50% -->--}}
+{{--                                                <div class="cp-buffer-1"></div>--}}
+{{--                                                <div class="cp-buffer-2"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="cp-progress-holder">--}}
+{{--                                                <!-- .cp-gt50 only needed when progress is > than 50% -->--}}
+{{--                                                <div class="cp-progress-1"></div>--}}
+{{--                                                <div class="cp-progress-2"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="cp-circle-control"></div>--}}
+{{--                                            <ul class="cp-controls">--}}
+{{--                                                <li><a href="#" class="cp-play cp-play-{{$song->id}}"--}}
+{{--                                                       tabindex="1">play</a></li>--}}
+{{--                                                <li><a href="#" class="cp-pause cp-pause-{{$song->id}}"--}}
+{{--                                                       style="display:none;"--}}
+{{--                                                       tabindex="1">pause</a></li>--}}
+{{--                                                <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <a href="/{{$song->category->category_slug}}/{{$song->slug}}" class="app_name"--}}
+{{--                                       title="">{{$song->title}}</a>--}}
+{{--                                    <div class="starsx">--}}
+{{--                                        <span><i class="fa fa-eye" aria-hidden="true"></i> {{$song->listeners}}</span>--}}
+{{--                                        <span><i class="fa fa-download"--}}
+{{--                                                 aria-hidden="true"></i> {{$song->downloads}}</span>--}}
+{{--                                        <span><i class="fa fa-file-audio-o"--}}
+{{--                                                 aria-hidden="true"></i> {{$song->size}}</span>--}}
+{{--                                        <a href="/{{$song->category->category_slug}}/{{$song->slug}}"--}}
+{{--                                           class="btn_download" rel="nofollow" title=""></a>--}}
 
-                                    </div>
-                                    {{--                                    <div class="developer"><i class="fa fa-eye"--}}
-                                    {{--                                                              aria-hidden="true"></i> {{$song->listeners}}</div>--}}
-                                </li>
+{{--                                    </div>--}}
+{{--                                    --}}{{--                                    <div class="developer"><i class="fa fa-eye"--}}
+{{--                                    --}}{{--                                                              aria-hidden="true"></i> {{$song->listeners}}</div>--}}
+{{--                                </li>--}}
 
-                            @endforeach
+{{--                            @endforeach--}}
 
-                        </ul>
-                    </div>
-
-
-                </div>
+{{--                        </ul>--}}
+{{--                    </div>--}}
 
 
-            </div>
-            {{--            <div class="wp-pagenavi box" role="navigation">--}}
-            {{--                <span class="pages">Page @if(request()->has('page')) {{$page}} @else 1 @endif of {{$newestSongs->lastPage()}}</span>--}}
-            {{--                @if($page == 1 || !isset($page))--}}
-            {{--                    @if($newestSongs->lastPage()==1)--}}
+{{--                </div>--}}
 
-            {{--                        <a class="page smaller current" title="Page 1" href="{{$url}}1">1</a>--}}
 
-            {{--                    @else--}}
-            {{--                        --}}{{--                        In first page--}}
+{{--            </div>--}}
+{{--            --}}{{--            <div class="wp-pagenavi box" role="navigation">--}}
+{{--            --}}{{--                <span class="pages">Page @if(request()->has('page')) {{$page}} @else 1 @endif of {{$newestSongs->lastPage()}}</span>--}}
+{{--            --}}{{--                @if($page == 1 || !isset($page))--}}
+{{--            --}}{{--                    @if($newestSongs->lastPage()==1)--}}
 
-            {{--                        <a class="page smaller current" title="Page 1" href="{{$url}}1">1</a>--}}
-            {{--                        <a class="page smaller" title="Page 2" href="{{$url}}2">2</a>--}}
-            {{--                        @if($newestSongs->lastPage() >= 3)--}}
-            {{--                            <a class="page smaller" title="Page 3" href="{{$url}}3">3</a>--}}
-            {{--                        @endif--}}
-            {{--                        <a class="last" href="{{$url}}2">Nächste »</a>--}}
-            {{--                    @endif--}}
-            {{--                @elseif(($page!=1) && ($page!=$newestSongs->lastPage()))--}}
-            {{--                    <a class="first" href="{{$url}}{{$page-1}}">« Back</a>--}}
-            {{--                    <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>--}}
-            {{--                    <a class="page smaller current"  href="{{$url}}{{$page}}">{{$page}}</a>--}}
-            {{--                    <a class="page smaller" href="{{$url}}{{$page+1}}">{{$page+1}}</a>--}}
-            {{--                    <a class="last" href="{{$url}}{{$page+1}}">Nächste »</a>--}}
+{{--            --}}{{--                        <a class="page smaller current" title="Page 1" href="{{$url}}1">1</a>--}}
 
-            {{--                @else--}}
-            {{--                    <a class="first" href="{{$url}}{{$page-1}}">« Back</a>--}}
-            {{--                    <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>--}}
-            {{--                    <a class="page smaller current" href="{{$url}}{{$page}}">{{$page}}</a>--}}
-            {{--                @endif--}}
-            {{--            </div>--}}
-        </div>
+{{--            --}}{{--                    @else--}}
+{{--            --}}{{--                        --}}{{----}}{{--                        In first page--}}
+
+{{--            --}}{{--                        <a class="page smaller current" title="Page 1" href="{{$url}}1">1</a>--}}
+{{--            --}}{{--                        <a class="page smaller" title="Page 2" href="{{$url}}2">2</a>--}}
+{{--            --}}{{--                        @if($newestSongs->lastPage() >= 3)--}}
+{{--            --}}{{--                            <a class="page smaller" title="Page 3" href="{{$url}}3">3</a>--}}
+{{--            --}}{{--                        @endif--}}
+{{--            --}}{{--                        <a class="last" href="{{$url}}2">Nächste »</a>--}}
+{{--            --}}{{--                    @endif--}}
+{{--            --}}{{--                @elseif(($page!=1) && ($page!=$newestSongs->lastPage()))--}}
+{{--            --}}{{--                    <a class="first" href="{{$url}}{{$page-1}}">« Back</a>--}}
+{{--            --}}{{--                    <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>--}}
+{{--            --}}{{--                    <a class="page smaller current"  href="{{$url}}{{$page}}">{{$page}}</a>--}}
+{{--            --}}{{--                    <a class="page smaller" href="{{$url}}{{$page+1}}">{{$page+1}}</a>--}}
+{{--            --}}{{--                    <a class="last" href="{{$url}}{{$page+1}}">Nächste »</a>--}}
+
+{{--            --}}{{--                @else--}}
+{{--            --}}{{--                    <a class="first" href="{{$url}}{{$page-1}}">« Back</a>--}}
+{{--            --}}{{--                    <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>--}}
+{{--            --}}{{--                    <a class="page smaller current" href="{{$url}}{{$page}}">{{$page}}</a>--}}
+{{--            --}}{{--                @endif--}}
+{{--            --}}{{--            </div>--}}
+{{--        </div>--}}
         <div class="col-md-12">
             <div class="box column-3">
                 <a href="{{route("newest")}}">
@@ -266,7 +266,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="/{{ $song->category->category_slug . "/" . $song->slug }}" class="app_name"
+                            <a href="/{{$song->slug }}" class="app_name"
                                title="">{{ $song->title }}</a>
                             <div class="starsx">
                                 <span><i class="fa fa-eye" aria-hidden="true"></i> {{ $song->listeners }}</span>
@@ -361,7 +361,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="/{{ $song->category->category_slug . "/" . $song->slug }}" class="app_name"
+                            <a href="/{{$song->slug }}" class="app_name"
                                title="">{{ $song->title }}</a>
                             <div class="starsx">
                                     <span><i class="fa fa-eye" aria-hidden="true"></i>
@@ -424,7 +424,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="/{{ $song->category->category_slug . "/" . $song->slug }}" class="app_name"
+                            <a href="/{{$song->slug }}" class="app_name"
                                title="">{{ $song->title }}</a>
                             <div class="starsx">
                                     <span><i class="fa fa-eye" aria-hidden="true"></i>
