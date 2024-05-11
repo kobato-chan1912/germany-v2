@@ -235,7 +235,7 @@
                                 </div>
 
 
-                                <a id="btnModalx" href="/{{$song->slug}}/download/" class="btn_download" rel="nofollow"
+                                <a id="btnModalx" href="/download/{{$song->id}}/" class="btn_download" rel="nofollow"
                                    title="Download">Herunterladen<i class="fa fa-download"></i></a>
 
                             </div>
